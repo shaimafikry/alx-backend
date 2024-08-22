@@ -12,11 +12,12 @@ class FIFOCache(BaseCashing):
 
     def put(self, key, item):
         """adding items fifo"""
-        if len(self.cache_data) > BaseCashing.MAX_ITEMS:
-            key_d = OrderedDict(self.cache_data).popitem(last=False)
-            print(f"DISCARD: {key_d[0]}")
         if key is not None and item is not None:
             self.cache_data.update({key: item})
+        if len(self.cache_data) > BaseCashing.MAX_ITEMS:
+            key_d = next(iter(self.cache_data))
+            del self.cache_data[key_d]
+            print(f"DISCARD: {key_d}")
 
     def get(self, key):
         """ print item"""
