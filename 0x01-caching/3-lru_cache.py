@@ -9,7 +9,7 @@ class LRUCache(BaseCaching):
         """ initation"""
         super().__init__()
 
-     def put(self, key, item):
+    def put(self, key, item):
         """adding items fifo"""
         if key is not None and item is not None:
             self.cache_data.update({key: item})
@@ -18,11 +18,10 @@ class LRUCache(BaseCaching):
             del self.cache_data[key_d]
             print(f"DISCARD: {key_d}")
 
-
     def get(self, key):
         """ print item"""
         if key is not None:
-          # delete the recent used and put it at last
+            # delete the recent used and put it at last
             val = self.cache_data.pop(key, None)
             if val is not None:
                 self.cache_data[key] = val
