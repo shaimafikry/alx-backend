@@ -10,10 +10,10 @@ Page numbers are 1-indexed, i.e. the first page is page 1."""
 from typing import Tuple
 
 
-def index_range(page: int, page_size: int) -> Tuple:
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """ func"""
     if page == 1:
         return (page, page_size)
     s_indx: int = (page - 1) * page_size
     e_indx: int = page * page_size
-    return s_indx, e_indx
+    return (s_indx, e_indx)
