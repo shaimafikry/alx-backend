@@ -16,4 +16,4 @@ def index_range(page: int, page_size: int) -> Tuple:
         return (page, page_size)
     s_indx: int = (page - 1) * page_size
     e_indx: int = page * page_size
-    return (s_indx, e_indx)
+    return s_indx, e_indx
