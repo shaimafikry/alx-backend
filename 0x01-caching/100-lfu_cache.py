@@ -31,7 +31,8 @@ class LFUCache(BaseCaching):
                 # check if i have more than one
                 if len(l_freq_keys) > 1:
                     # search for the key that appears first in self.order
-                    key_to_del = next(k for k in self.order if k in l_freq_keys)
+                    key_to_del = next(k for k in self.order
+                                      if k in l_freq_keys)
                 else:
                     key_to_del = l_freq_keys[0]
                 # the key to remove
