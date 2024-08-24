@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+""" pagintation"""
 import csv
 import math
 from typing import List
@@ -25,6 +25,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """ use the index range func and return the data"""
         if not isinstance(page, int) or page <= 0:
             raise AssertionError
         if not isinstance(page_size, int) or page_size <= 0:
